@@ -7,11 +7,16 @@ public class Engine {
     boolean fuelStatus; 
     
 
-
+    /**
+   * Method that refuels car be setting it equal to the max fuel
+   */
     public void refuel(){
     this.currentFuel = maxfuel;
     }
-    //   - a constructor, which takes in initial values for the attributes named above and sets them appropriately
+    /**
+   * Constructor for the Engine class
+   * @param   fuelType, fuelLevel
+   */
     public Engine(FuelType f, double fuelLevel){
      this.fuelType = f;
      this.maxfuel = this.currentFuel;
@@ -20,7 +25,10 @@ public class Engine {
     
     
     }
-
+     /**
+   * Boolean that detects if train can go or not based on fuel level
+   * @return returns false if fuel is at zero and returns true if otherwise
+   */
     public boolean go(){
      
     //  while(fuelStatus){
@@ -38,7 +46,10 @@ public class Engine {
      }
 
      }
-     
+        /**
+   *  Demonstrates how engine runs when certain fuel type and fuel level is declared 
+   * @param args The command line arguments (ignored)
+   **/
      public static void main(String[] args) {
         Engine myEngine = new Engine(FuelType.ELECTRIC, 100.0);
         while (myEngine.go()) {
@@ -66,7 +77,4 @@ public class Engine {
     
     
     
-    //   - a `refuel()` method which will reset the `Engine`'s current fuel level to the maximum, and which doesn't need to `return` anything
-    //   - a `go()` which will decrease the current fuel level, print some useful information (e.g. remaining fuel level), and return `True` if the fuel level is above 0 and `False` otherwise.
-    
-    
+   

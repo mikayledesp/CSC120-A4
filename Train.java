@@ -11,7 +11,10 @@ public class Train {
     Passenger myPass4 = new Passenger("Candida G");
     private ArrayList<Car> currentCars = new ArrayList<Car>();
    
-
+/**
+   * Constructor for the Train class
+   * @param   fuelType, fuelCapacity, nCars, passengerCapacity
+   */
     public Train(FuelType fuelType, double fuelCapacity, int nCars, int passengerCapacity){
         this.engine = new Engine(fuelType,fuelCapacity);
         this.currentCars = new ArrayList<>(nCars);
@@ -23,13 +26,20 @@ public class Train {
         car1.addPassenger(myPass3);
         car1.addPassenger(myPass4);
     }
-
+/**
+   * Acessor for the engine 
+   * @param   int 
+   * @return  Engine 
+   */
     public Engine getEngine(){
         // System.out.println(this.engine);
         return this.engine;
 
     }
-
+/**
+   * Gets the max compacity of the car by iterating over the number of current cars 
+   * @return  max compacity of the train
+*/
     public int getMaxCapacity(){
         int max = 0;
         for(int i = 0; i < this.currentCars.size(); i++){
@@ -39,7 +49,11 @@ public class Train {
     }
 
 
-
+/**
+   * Looks at number of cars in the train and determines if there are any 
+   * @param   int 
+   * @return  if there are cars on the train 
+   */
     public Car getCar(int i){
        if (this.currentCars.size() == 0){
         System.out.println("There are no cars in this train!");
@@ -48,7 +62,11 @@ public class Train {
        System.out.println("There are cars in this train."  );
        return this.currentCars.get(i);
     }
-
+ 
+  /**
+   * Creates a loop to print out the names of each passengar based on the size of the passengar lost  
+   * no params and no return statement
+   */
     public void printManifest(){
         if (this.currentCars.size() > 0){
             for( Car car: this.currentCars){
@@ -56,14 +74,18 @@ public class Train {
             }
         }
     }
-
+   /**
+   * Demonstrates how to return information about the train(like its engine, max capacicity and cars), then prints out manifest of passengers on train  
+   * @param args The command line arguments (ignored)
+   **/
 public static void main(String[] args) {
     Train myTrain = new Train(FuelType.STEAM, 15, 3, 30);
     myTrain.getMaxCapacity();
     myTrain.getCar(0);
     myTrain.getEngine();
-    System.out.println("Passengers on Car 1: ");
+    System.out.println("Passengers on Train: ");
     myTrain.printManifest();
+    
     
 }
 

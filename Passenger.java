@@ -6,6 +6,12 @@ public class Passenger {
         this.name = name;
     }
 
+
+ /**
+   * Boolean that boards  passenger on the car
+   * @param   Car 
+   * @return returns false if passangers can not be added on car and returns true if passanger can be
+   */
  public boolean boardCar(Car c){
     if (!c.addPassenger(this)) {
         //...appropriate error message if unsuccessful
@@ -18,7 +24,11 @@ public class Passenger {
     
  }
 
- 
+ /**
+   * Boolean that gets passenger off from car 
+   * @param   Car 
+   * @return returns false if passangers not on car and returns true if passanger is on car
+   */
  public boolean getOffCar(Car c){
     if (!c.removePassenger(this)){
         System.out.println("Error: Passenger was not onboard and cannot be removed!");
